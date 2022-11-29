@@ -44,30 +44,6 @@ public class CadastroDAO{
         }
     }
 
-    public boolean autenticaUsuarioBool (Login login) throws Exception{
-        String sql = "Select * from login where login = ? and senha = ?";
-
-        Connection conn = null;
-        PreparedStatment pstm = null;
-        boolean resp = false;
-
-        try{
-            conn = ConnectionFactory.criarConexao();
-            pstm = conn.prepareStatment(sql);
-
-            pstm.setString(1, login.login);
-            pstm.setString(2, login.senha);
-
-            ResultSet result = pstm.executeQuery();
-            if(result.next())
-              resp = true;
-    
-        } catch (SQLExeption e) {
-            JOptionPane.showMessageDialog(null, "UsuarioDAO: " + e);
-        }
-        return resp;
-    }
-
     public Login autenticaUsuario (Login login) throws Exception{
         String sql = "Select * from login where login = ? and senha = ?";
 
