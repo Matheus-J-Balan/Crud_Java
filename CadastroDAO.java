@@ -1,3 +1,13 @@
+package BD;
+
+import Classes.Login;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import org.omg.CORBA.SetOverrideType;
+
 public class CadastroDAO{
     public void salvarCadastro(Login l){
         String sql = "INSERT INTO login(nome, CPF, data_nascimento, endereco, login, senha) VALUES (?,?,?,?,?,?)";
